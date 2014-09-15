@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EventManagerDialog</class>
+ <widget class="QDialog" name="EventManagerDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>531</width>
+    <height>729</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>521</width>
+     <height>711</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Event list</string>
+    </attribute>
+    <widget class="QTreeWidget" name="eventTreeWidget">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>441</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>Event</string>
+      </property>
+     </column>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="addEvent">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>510</y>
+       <width>85</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add Event</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addBranch">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>510</y>
+       <width>85</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add branch</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addAction">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>510</y>
+       <width>85</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add action</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Variable list</string>
+    </attribute>
+    <widget class="QListWidget" name="variableListWidget">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>60</y>
+       <width>141</width>
+       <height>551</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>30</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Variable list</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="variableListComboBox">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>20</y>
+       <width>141</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Constant</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Addition</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Position collidable</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Event counter</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Key state</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Position state</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Event state</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QFrame" name="constantFrame">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QSpinBox" name="constantSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>40</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>5</y>
+        <width>56</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Constant</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="additionFrame">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>160</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QComboBox" name="variable1comboBox">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>40</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>10</y>
+        <width>56</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Addition</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>40</y>
+        <width>16</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> +</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="variable2ComboBox">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>40</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="collidableFrame">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>250</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QSpinBox" name="xCollidableSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="yCollidableSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>40</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>10</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Position collidable</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="counterFrame">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>350</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QComboBox" name="counterComboBox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>191</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>10</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Event counter</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="keyFrame">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>450</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Key state</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="keyComboBox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>191</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>A </string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>B</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>D</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>E</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>F</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>G</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>H</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>J</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>K</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>N</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>O</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>P</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Q</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>T</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>U</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>V</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Z</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num0</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num5</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num6</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num7</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num8</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Num9</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Escape</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LControl</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LShift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LAlt</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LSystem</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RControl</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RShift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RAlt</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RSystem</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Menu</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LBracket</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RBracket</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SemiColon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Comma</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Period</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Quote</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Slash</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>BackSlash</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tilde</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Equal</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dash</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Space</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Return</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tab</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PageUp</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PageDown</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>End</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Insert</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Subtract</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Multiply</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Divide</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Left</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Right</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Up</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Down</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="positionFrame">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>550</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QSpinBox" name="xStateSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="yStateSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>10</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Position state</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="addVariableButton">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>640</y>
+       <width>85</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>add variable</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

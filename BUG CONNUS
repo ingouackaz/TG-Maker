@@ -1,0 +1,25 @@
+les TODO :
+- Fermeture du projet, OK CANCEL ?								OK
+- Ouvrir un projet, la touche escape quitte TOUT 						OK
+- tile par defaut, sinon ca clique dans le vide							OK
+- liste de tile, 1 clic au lieu de 2 (intuitif)							OK
+- il faut reset les Coo de la cam qd on ouvre un projet						A FAIRE
+- Mettre a jour la liste de tileset (quand on l'importe)					OK
+- Database Texte a finir    	    	      							A FAIRE  
+- Database Sons, sons non ajouter								A FAIRE  
+- Le mode collision persiste quand on ouvre un projet						A FAIRE
+
+les Segfaults :
+- Quand on ouvre un nouveau projet : clean la liste de tileset. Segfault qd on rouvre un tile			OK
+- clic en dehors de la map quand on WASD en meme temps								OK
+- clic en dehors de la fenetre en mode collision								OK
+- Segfault quand on lance une musique sans la selectionner							OK
+- new projet quand un projet est deja ouvert									OK
+- Segfault quand on selectionne une liste de tileset autre que celle de base et qu'on ferme le projet		OK
+- Segfault quand je pinceau en sortant de la map     	       	     	     	      	       			OK
+
+
+rectangle de selection 17h10 
+7 lignes !
+OK LOL HF ROGER
+18h20 juste le display rectangle qui fait de la merde =) 

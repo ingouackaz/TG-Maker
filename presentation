@@ -1,0 +1,33 @@
+
+La presentation dure 45min, 15min de chaque :
+I]      une présentation de votre projet et de ce qu'il vous a apporté
+II]     une démonstration du programme
+III]    une confrontation point par point avec le cahier des charges.
+
+I] Ce que cela nous a apporte :
+
+    1. Presentation du projet. (10min)
+        TGMaker, editeur de jeu d'aventure 2D totalement scriptable.
+        Parler des ressources etc...
+
+    2. Pedagogique (15min)
+    Design patterns de la serialization automatique de donnees binaires :
+    bas niveau
+        definition d'un format binaire (hexdump -C d'une sauvegarde?)
+        conceptions, templates, factories, et heritage... (montrer base/include/Manager.hpp par exemple)
+        meta-programming par generation de code source pre-compilation
+        bundling de ressources au sein de l'executable
+    haut niveau
+        barre de chargement asynchrone au chargement d'un projet
+        treeview pour construction des arbres de branches pour les evenements
+
+II] Demonstration du programme (5min)
+    Mea culpa
+    Montrer ce qu'on peut, [mode galere activated]
+
+III] Confrontation au cahier des charges (10min)
+    Mea culpa
+    Confronter point par point comme on peut, eventuellement avec du code source.
+
+(IV])Questions?
+

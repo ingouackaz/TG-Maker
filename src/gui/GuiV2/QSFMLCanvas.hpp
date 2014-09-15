@@ -1,0 +1,78 @@
+#ifndef QSFMLCANVAS_HPP
+#define QSFMLCANVAS_HPP
+
+////////////////////////////////////////////////////////////
+// Headers
+////////////////////////////////////////////////////////////
+#include <SFML/Graphics.hpp>
+#include <Qt/qwidget.h>
+#include <Qt/qtimer.h>
+#include <QScrollArea>
+
+
+////////////////////////////////////////////////////////////
+/// QSFMLCanvas allows to run SFML in a Qt control
+////////////////////////////////////////////////////////////
+class QSFMLCanvas : public QWidget, public sf::RenderWindow
+{
+public :
+
+    ////////////////////////////////////////////////////////////
+    /// Construct the QSFMLCanvas
+    ///
+    /// \param Parent :    Parent of the widget
+    /// \param Position :  Position of the widget
+    /// \param Size :      Size of the widget
+    /// \param FrameTime : Frame duration, in milliseconds (0 by default)
+    ///
+    ////////////////////////////////////////////////////////////
+    QSFMLCanvas(QWidget* Parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime = 0);
+
+    ////////////////////////////////////////////////////////////
+    /// Destructor
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual ~QSFMLCanvas();
+
+    virtual void      setCanvasEnabled(bool);
+    void      applyLayer(const int widht, const int height,sf::Sprite &layer);
+private :
+
+    ////////////////////////////////////////////////////////////
+    /// Notification for the derived class that moment is good
+    /// for doing initializations
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void OnInit();
+
+    ////////////////////////////////////////////////////////////
+    /// Notification for the derived class that moment is good
+    /// for doing its update and drawing stuff
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void OnUpdate();
+    virtual void OnDraw();
+
+    ////////////////////////////////////////////////////////////
+    /// Called when the widget is shown ;
+    /// we use it to initialize our SFML window
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void showEvent(QShowEvent*);
+
+    ////////////////////////////////////////////////////////////
+    /// Called when the widget needs to be painted ;
+    /// we use it to display a new frame
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void paintEvent(QPaintEvent*);
+
+    ////////////////////////////////////////////////////////////
+    // Member res_data
+    ////////////////////////////////////////////////////////////
+    QTimer myTimer;       ///< Timer used to update the view
+    bool   myInitialized; ///< Tell whether the SFML window has been initialized or not
+};
+
+
+#endif // QSFMLCANVAS_HPP

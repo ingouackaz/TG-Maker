@@ -1,0 +1,26 @@
+
+echo "TGMaker Installer"
+echo "-=-=-=-=-=-=-=-=-"
+echo ""
+echo "Requirements: SFML1.6 (w/ correct paths), /tmp dir, gcc, base64, gunzip, GNU tail, mktemp"
+echo "Generating temporary file..."
+tmpa=`mktemp /tmp/TGMaker.XXXXXXXX.b64`
+tmpb=`mktemp /tmp/TGMaker.XXXXXXXX.gz`
+tmpc=`mktemp /tmp/TGMaker.XXXXXXXX.cpp`
+echo "Extracting game code..."
+tail $0 -n +31 >> $tmpa
+echo "Decoding..."
+base64 -di $tmpa >> $tmpb
+echo "Ungzipping..."
+gunzip -c $tmpb >> $tmpc
+echo "Compiling..."
+g++ -o "$game" $tmpc -L/usr/lib -lsfml-graphics -lsfml-window -lsfml-system
+echo "Finalizing..."
+chmod +x "$game"
+echo "Cleaning up /tmp dir..."
+rm -f /tmp/TGMaker*
+echo "Script complete. Please check for errors."
+echo "Your game is: $game"
+exit
+
+### #GAMECODE# ###
